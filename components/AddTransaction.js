@@ -21,8 +21,8 @@ const AddTransaction = () => {
           onChangeDate('');
     }
     return (
-        <View>
-            <Text>AddTransaction</Text>
+        <View style={{paddingTop: 15}}>
+            <Text style={{fontFamily: 'Verdana', fontSize: 20}}>AddTransaction</Text>
             <View style={styles.newTx}>
                 <TextInput value={title} onChangeText={onChangeTitle} placeholder='Expense Title...' />
             </View>
@@ -30,7 +30,7 @@ const AddTransaction = () => {
                 <TextInput value={amount} onChangeText={onChangeAmount} keyboardType='numeric' placeholder='Expense Amount...'/>
             </View>
             <View style={styles.newTx}>
-                <TextInput value={date} onChangeText={onChangeDate} placeholder='Expense Date...'/>
+                <TextInput value={date} onChangeText={onChangeDate} keyboardType='numeric' placeholder='Expense Date...'/>
             </View>
             <TouchableOpacity onPress={createNewTx}>
                 <Text style={styles.newTxBtn}>Add Transaction</Text>
@@ -41,29 +41,23 @@ const AddTransaction = () => {
 
 const styles = StyleSheet.create({
     newTxContainer: {
-      marginBottom: '8px',
+      marginBottom: 8,
       padding: 0,
     },
     newTx: {
       backgroundColor: '#fff',
-      paddingTop: '8px',
-      paddingBottom: '8px',
+      paddingTop: 8,
+      paddingBottom: 8,
       color: '#333',
-      shadowColor: 'rgba(0, 0, 0, 0.24)',
-      shadowRadius: '5px',
-      shadowOpacity: '2px',
-      shadowOffset: '2px',
-      fontSize: '16px',
-      marginBottom: '8px'
+      marginBottom: 8
     },
     newTxBtn: {
         backgroundColor: '#9c88ff',
         color: '#fff',
-        padding: '8px',
+        padding: 8,
         width: '100%',
         textAlign: 'center',
         fontStyle: 'normal',
-        fontSize: '18px'
     }
 })
 

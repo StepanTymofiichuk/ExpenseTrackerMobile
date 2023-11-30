@@ -8,9 +8,9 @@ const Balance = () => {
   //console.log(amounts)
   const total = amounts.length > 0 ? amounts.reduce((acc, item) => (acc += item)).toFixed(2) : amounts.length
   return (
-    <View style={{marginTop: '15px'}}>
-        <Text style={{margin: 0, letterSpacing: '1px'}}>Your Balance</Text>
-        <Text style={{margin: 0}}>${total}</Text>
+    <View style={{marginTop: 15}}>
+        <Text style={{ fontFamily: 'Verdana', fontSize: 15 }}>Your Balance</Text>
+        <Text style={{ fontFamily: 'Verdana', fontSize: 30 }}>${total}</Text>
     </View>
   )
 }

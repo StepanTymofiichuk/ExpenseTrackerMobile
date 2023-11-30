@@ -2,8 +2,9 @@ import React from 'react';
 import { Text } from 'react-native';
 
 const Header = () => {
+  
   return (
-    <Text>ExpenseTracker</Text>
+    <Text style={{ fontFamily: 'Verdana', fontSize: 30 }}>ExpenseTracker</Text>
   )
 }
 
