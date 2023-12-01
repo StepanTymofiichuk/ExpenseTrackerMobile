@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   mainContainer: {
-    marginTop: '10%',
+    marginTop: '5%',
     marginLeft: '5%'
   }
 });

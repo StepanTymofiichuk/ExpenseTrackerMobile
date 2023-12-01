@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import { View, StyleSheet, Text } from 'react-native';
+import { useFonts, Inter_600SemiBold, Inter_500Medium } from '@expo-google-fonts/inter';
 
 const IncomeExpences = () => {
   const { transactions } = useContext(GlobalContext)
@@ -12,16 +13,24 @@ const IncomeExpences = () => {
     amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
     -1
   );
+  let [fontsLoaded, fontError] = useFonts({
+    Inter_600SemiBold,
+    Inter_500Medium,
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
     <View style={styles.expContainer}>
       <View style={styles.column}>
-        <Text style={{margin: 0, textTransform: 'uppercase', fontFamily: 'Verdana', fontSize: 20}}>Income</Text>
-        <Text style={{margin: 8, fontFamily: 'Verdana', fontSize: 15}}>+${income}</Text>
+        <Text style={{margin: 0, textTransform: 'uppercase', fontFamily: 'Inter_600SemiBold', fontSize: 20}}>Income</Text>
+        <Text style={{margin: 8, fontFamily: 'Inter_500Medium', fontSize: 15}}>+${income}</Text>
         {/* Add more elements for the first column */}
       </View>
       <View style={styles.column2}>
-        <Text style={{margin: 0, textTransform: 'uppercase', fontFamily: 'Verdana', fontSize: 20}}>Expense</Text>
-        <Text style={{margin: 8, fontFamily: 'Verdana', fontSize: 15}}>-${expense}</Text>
+        <Text style={{margin: 0, textTransform: 'uppercase', fontFamily: 'Inter_600SemiBold', fontSize: 20}}>Expense</Text>
+        <Text style={{margin: 8, fontFamily: 'Inter_500Medium', fontSize: 15}}>-${expense}</Text>
         {/* Add more elements for the second column */}
       </View>
     </View>
